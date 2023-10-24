@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			<img class="main-page__background" src="@img/bg.png" alt="background image car">
+			<div class="main-page__filter-container"></div>
+
+			@@include('html/_header.htm',{})
+			<main class="page">
+
+				<section class="main-page">
+					<div class="main-page__container">
+						<div data-ripple class="main-page__card card _gm">
+							<img src="@img/cards/calc.png" alt="" class="card__icon">
+							<div class="card__title">
+								Калькулятор
+							</div>
+							<div class="card__description">
+								Розрахунок вартості всіх етапів доставки авто з аукціонів США
+							</div>
+						</div>
+						<div data-ripple class="main-page__card card _gm">
+							<img src="@img/cards/carfax.png" alt="" class="card__icon carfax-icon">
+							<div class="card__title">
+								Carfax
+							</div>
+							<div class="card__description">
+								Звіт по історії автомобіля
+							</div>
+						</div>
+						<div data-ripple class="main-page__card card _gm">
+							<img src="@img/cards/tracking.png" alt="" class="card__icon">
+							<div class="card__title">
+								Tracking
+							</div>
+							<div class="card__description">
+								Відслідковування маршруту контейнера
+							</div>
+						</div>
+						<div data-ripple class="main-page__card card _gm">
+							<img src="@img/cards/faq.png" alt="" class="card__icon">
+								<div class="card__title">
+									F.A.Q.
+								</div>
+								<div class="card__description">
+									Відповіді на часті запитання
+								</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
