@@ -21,6 +21,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: toRem(10);
 	}
 	&__contacts-block {
 		display: flex;
@@ -34,6 +35,8 @@
 	&__socials {
 		display: flex;
 		gap: toRem(10);
+		display: flex;
+		flex-wrap: wrap;
 	}
 	&__social {
 		&:hover {
@@ -58,6 +61,8 @@
 		}
 	}
 	&__adress-block {
+		text-align: right;
+		line-height: 120%;
 		&:hover {
 			text-decoration: underline;
 			cursor: pointer;
