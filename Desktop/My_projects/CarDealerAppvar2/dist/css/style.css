@@ -539,10 +539,18 @@ h6 {
   }
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  /* ширина для вертикального скролла */
+  height: 8px;
+  /* высота для горизонтального скролла */
+  background-color: #143861;
+}
+
 .wrapper {
   width: 100%;
   height: 100%;
-  position: relative;
+  overflow-y: scroll;
 }
 
 .main-page {
@@ -553,6 +561,7 @@ h6 {
 }
 
 .main-page__container {
+  scroll-behavior: smooth;
   padding: 1.5625rem;
   display: -ms-grid;
   display: grid;
@@ -563,7 +572,6 @@ h6 {
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   height: 100%;
-  width: 100%;
 }
 
 .main-page__container > *:nth-child(1) {
