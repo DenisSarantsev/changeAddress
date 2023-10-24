@@ -753,6 +753,12 @@ h6 {
   }
 }
 
+@media (max-width: 43.75em) {
+  .header__logo {
+    display: none;
+  }
+}
+
 @media (max-width: 37.5em) {
   .card {
     padding: 0.9375rem;

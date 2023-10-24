@@ -31,6 +31,9 @@
 		@media (max-width: em(1000)){
 			font-size: toRem(30);
 		}
+		@media (max-width: em(700)){
+			display: none;
+		}
 	}
 	&__menu {
 		
