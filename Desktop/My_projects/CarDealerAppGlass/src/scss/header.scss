@@ -32,16 +32,15 @@
 		@media (max-width: em(1000)){
 			font-size: toRem(30);
 		}
-		@media (max-width: em(700)){
-			display: none;
-		}
 	}
 	&__menu {
-		
+		display: flex;
+		align-items: center;
 	}
 	&__right-block {
 		display: flex;
 		gap: toRem(10);
+		flex-wrap: nowrap;
 		&>* {
 			padding: toRem(13) toRem(20);
 			background: rgba(39, 60, 60, 0.5);
@@ -78,15 +77,29 @@
 			text-decoration: underline;
 		}
 	}
+	@media (max-width:$mobile){
+		 display: none; 
+	}
 }
 
+.mobile-authorization-block {
+	@media (min-width:$mobile){
+		 display: none; 
+	}
+}
 
+.desktop-authorization-block {
+	flex-wrap: nowrap;
+	@media (max-width:$mobile){
+		display: none;
+	}
+}
 
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -107,7 +120,7 @@
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #000;
+			background-color: #ffffff;
 		}
 		&::before {
 			top: 0;
@@ -136,4 +149,3 @@
 		}
 	}
 }
-*/
