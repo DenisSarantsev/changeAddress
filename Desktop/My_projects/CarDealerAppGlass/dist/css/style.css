@@ -560,7 +560,7 @@ h6 {
 
 .main-page {
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   z-index: 20;
 }
@@ -743,7 +743,7 @@ h6 {
 
   .card {
     padding: 1.25rem;
-    gap: 0.625rem;
+    gap: 0.75rem;
     height: auto;
   }
 
@@ -755,23 +755,34 @@ h6 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 1.5625rem;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    gap: 0.9375rem;
+  }
+
+  .card__mobile-container:first-child {
+    max-height: 4.0625rem;
+    max-width: 4.0625rem;
+    margin-bottom: 0;
   }
 
   .card__icon {
     max-height: 4.375rem;
     max-width: 4.375rem;
+    margin-bottom: 0;
   }
 
   .card__title {
     font-size: 1.75rem;
   }
 
+  .card__description {
+    font-size: 1rem;
+  }
+
   .carfax-icon {
-    max-width: 6.25rem;
+    max-width: 5.625rem;
   }
 }
 
@@ -784,7 +795,10 @@ h6 {
 @media (max-width: 37.5em) {
   .card {
     padding: 0.9375rem;
-    gap: 0.4375rem;
+  }
+
+  .card__mobile-container:first-child {
+    max-width: 2.8125rem;
   }
 
   .card__icon {
@@ -792,11 +806,15 @@ h6 {
   }
 
   .carfax-icon {
-    max-width: 4.375rem;
+    max-width: 3.75rem;
   }
 }
 
 @media (max-width: 31.25em) {
+  .card__mobile-container:first-child {
+    max-width: 2.375rem;
+  }
+
   .card__icon {
     max-width: 2.6875rem;
   }
@@ -806,6 +824,6 @@ h6 {
   }
 
   .carfax-icon {
-    max-width: 3.75rem;
+    max-width: 3.125rem;
   }
 }

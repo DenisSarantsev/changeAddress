@@ -51,7 +51,7 @@
 
 .main-page {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	top: 0;
 	z-index: 20;
 		&__container {
@@ -129,21 +129,33 @@
 	}
 	@media (max-width:$mobile){
 		 padding: toRem(20); 
-		 gap: toRem(10);
+		 gap: toRem(12);
 		 height: auto;
 	}
 	@media (max-width: em(600)){
 		padding: toRem(15);
-		gap: toRem(7);
 	}
 	&__mobile-container {
 		@media (max-width:$mobile){
 			display: flex;
 			width: 100%;
 			justify-content: flex-start;
-			align-items: center;
-			gap: toRem(25);
+			align-items: end;
+			gap: toRem(15);
 		}
+			&:first-child {
+					@media (max-width:$mobile){
+						max-height: toRem(65);
+						max-width: toRem(65);
+						margin-bottom: 0;
+					}
+					@media (max-width: em(600)){
+						max-width: toRem(45);
+					}
+					@media (max-width: em(500)){
+						max-width: toRem(38);
+					}
+			}
 	}
 	&__image {
 		position: absolute;
@@ -166,6 +178,7 @@
 		@media (max-width:$mobile){
 			max-height: toRem(70);
 			max-width: toRem(70);
+			margin-bottom: 0;
 		}
 		@media (max-width: em(600)){
 			max-width: toRem(50);
@@ -197,6 +210,9 @@
 		font-weight: 400;
 		font-size: toRem(20);
 		line-height: 120%;
+		@media (max-width:$mobile){
+			font-size: toRem(16);
+		}
 	}
 }
 
@@ -204,13 +220,13 @@
 	max-width: toRem(120);
 	filter: invert(99%) sepia(17%) saturate(1045%) hue-rotate(181deg) brightness(116%) contrast(100%);
 	@media (max-width:$mobile){
-		max-width: toRem(100);
+		max-width: toRem(90);
 	}
 	@media (max-width: em(600)){
-		max-width: toRem(70);
+		max-width: toRem(60);
 	}
 	@media (max-width: em(500)){
-		max-width: toRem(60);
+		max-width: toRem(50);
 	}
 }
 
