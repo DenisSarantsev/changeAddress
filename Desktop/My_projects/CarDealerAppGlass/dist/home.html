@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231027165307">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231031082752">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,8 @@
 
 <body>
 	<div class="wrapper">
-		<img class="main-page__background" src="img/view-car-running-high-speed-conv-final.webp" alt="background image car">
-		<div class="main-page__filter-container"></div>
+		<img class="wrapper__background" src="img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+		<div class="wrapper__filter-container"></div>
 
 		<header class="header _gm">
 			<div class="header__container">
@@ -27,37 +27,29 @@
 
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#">Головна сторінка</a></li>
-							<li class="menu__item"><a href="#">Калькулятор</a></li>
+							<li class="menu__item"><a href="home.html">Головна сторінка</a></li>
+							<li class="menu__item"><a href="calculator.html">Калькулятор</a></li>
 							<li class="menu__item"><a href="#">Контакти</a></li>
 							<li class="menu__item"><a href="#">Про нас</a></li>
 						</ul>
 					</nav>
-					<div class="header__right-block mobile-authorization-block">
-						<button class="header__registration-button">
-							Зареєструватись
-						</button>
-						<button class="header__login-button">
-							Увійти
-						</button>
-					</div>
 				</div>
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<div class="header__right-block desktop-authorization-block">
-					<button class="header__registration-button">
+					<button class="header__registration-button main-button-style">
 						Зареєструватись
 					</button>
-					<button class="header__login-button">
+					<button class="header__login-button main-button-style">
 						Увійти
 					</button>
 				</div>
 			</div>
 		</header>
-		<main class="page">
+		<main class="page main-container-padding">
 
 			<section class="main-page">
 				<div class="main-page__container">
-					<div data-ripple class="main-page__card card _gm">
+					<div data-ripple class="main-page__card card card-main-style _gm">
 						<div class="card__mobile-container">
 							<img src="img/cards/calc.png" alt="" class="card__icon">
 							<div class="card__title">
@@ -68,7 +60,7 @@
 							Розрахунок вартості всіх етапів доставки авто з аукціонів США
 						</div>
 					</div>
-					<div data-ripple class="main-page__card card _gm">
+					<div data-ripple class="main-page__card card card-main-style _gm">
 						<div class="card__mobile-container">
 							<img src="img/cards/carfax.png" alt="" class="card__icon carfax-icon">
 							<div class="card__title">Carfax</div>
@@ -77,7 +69,7 @@
 							Звіт по історії автомобіля
 						</div>
 					</div>
-					<div data-ripple class="main-page__card card _gm">
+					<div data-ripple class="main-page__card card card-main-style _gm">
 						<div class="card__mobile-container">
 							<img src="img/cards/tracking.png" alt="" class="card__icon">
 							<div class="card__title">
@@ -88,7 +80,7 @@
 							Відслідковування маршруту контейнера
 						</div>
 					</div>
-					<div data-ripple class="main-page__card card _gm">
+					<div data-ripple class="main-page__card card card-main-style _gm">
 						<div class="card__mobile-container">
 							<img src="img/cards/faq.png" alt="" class="card__icon">
 							<div class="card__title">
@@ -125,7 +117,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231027165307"></script>
+	<script src="js/app.min.js?_v=20231031082752"></script>
 </body>
 
 </html>
