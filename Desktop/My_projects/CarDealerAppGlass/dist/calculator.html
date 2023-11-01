@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231031082752">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231101102204">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,12 +50,15 @@
 			<section class="calculator">
 				<div class="calculator__container card-main-style _gm">
 					<div class="calculator__left-container">
-						<h1 class="calculator__title main-title-style">
-							Калькулятор
-						</h1>
-						<div class="calculator__subtitle">
-							Для отримання прорахунку заповніть обов'язкові поля*
+						<div class="calculator__left-container-top">
+							<h1 class="calculator__title main-title-style">
+								Калькулятор
+							</h1>
+							<div class="calculator__subtitle">
+								Для отримання прорахунку заповніть обов'язкові поля*
+							</div>
 						</div>
+
 						<div class="calculator__calc-wrapper calc">
 							<div class="calc__auction-area-container">
 								<div class="calc__auction auction">
@@ -166,10 +169,17 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="calc__calc-button calc-button">
-							<button class="calc-button__button">Прорахувати</button>
+							<button class="calc-button__button">
+								<span class="calc-button__button-text">
+									Прорахувати
+								</span>
+								<img src="img/icons/right-arrow.png" alt="Декоративна стрілка вправо" class="calc-button__arrow">
+							</button>
 						</div>
 					</div>
+
 					<div class="calculator__result-wrapper result">
 						<h2 class="result__title main-title-style">
 							Прорахунок
@@ -227,6 +237,12 @@
 								<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
 							</div>
 						</div>
+						<div class="result__copy-container">
+							<button class="result__copy-button">
+								<img class="result__copy-icon" src="img/icons/copy-icon.png" alt="Іконка копіювання тексту">
+								<span class="result__copy-button-text">Скопіювати</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -253,7 +269,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231031082752"></script>
+	<script src="js/app.min.js?_v=20231101102204"></script>
 </body>
 
 </html>
