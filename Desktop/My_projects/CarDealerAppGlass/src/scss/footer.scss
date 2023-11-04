@@ -18,6 +18,9 @@
 	padding: toRem(15) toRem(25);
 	background-color: rgba(25, 37, 37, 0.6);
 	animation: 0.7s ease 0s alternate animating-multiple-properties-footer;
+	@media (max-width:$mobile){
+		padding: toRem(10) toRem(15);
+	}
 	&__container {
 		display: flex;
 		align-items: center;
@@ -37,7 +40,7 @@
 		display: flex;
 		gap: toRem(10);
 		display: flex;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 	}
 	&__social {
 		&:hover {
@@ -46,6 +49,12 @@
 		& img {
 			filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 			max-width: toRem(30);
+			@media (max-width:$mobile){
+				max-width: toRem(25);
+			}
+			@media (max-width: em(600)){
+				max-width: toRem(20);
+			}
 		}
 	}
 	&__phones {
@@ -55,6 +64,9 @@
 		justify-content: center;
 		gap: toRem(6);
 		font-size: toRem(17);
+		@media (max-width:$mobile){
+			font-size: toRem(16);
+		}
 	}
 	&__phone {
 		&:hover {
@@ -67,6 +79,9 @@
 		&:hover {
 			text-decoration: underline;
 			cursor: pointer;
+		}
+		@media (max-width:$mobile){
+			font-size: toRem(14);
 		}
 	}
 }

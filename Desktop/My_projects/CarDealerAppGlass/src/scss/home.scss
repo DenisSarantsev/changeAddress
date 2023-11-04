@@ -55,7 +55,7 @@
 		position: absolute;
 		z-index: -1;
 		// background-color: rgba(255, 255, 255, 0.4);
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgba(0, 0, 0, 0.3);
 		width: 100%;
 		height: 100vh;
 	}
@@ -352,6 +352,11 @@
 	&__title {
 	}
 	&__list {
+		color: #ffffff;
+			&:focus {
+				background: rgba(39, 60, 60, 0.7);
+				transition: all 0.3s ease 0s;
+			}
 	}
 	&__list-item {
 	}
@@ -446,7 +451,6 @@
 	}
 }
 .calc-button {
-	margin-top: toRem(20);
 	&__button {
 		font-size: toRem(18);
 		font-weight: 400;
@@ -455,11 +459,15 @@
 		background-color: rgba(0, 0, 0, 0.4);
 		transition: all 0.3s ease 0s;
 		display: flex;
+		align-items: center;
 		gap: toRem(10);
 		&:hover {
 			transition: all 0.3s ease 0s;
 			background: rgba(9, 24, 24, 0.7);
 			gap: toRem(15);
+		}
+		@media (max-width:$mobile){
+			font-size: toRem(16);
 		}
 	}
 	&__button-text {
@@ -469,6 +477,10 @@
 		width: toRem(20);
 		height: toRem(20);
 		filter: invert(100%) sepia(0%) saturate(7419%) hue-rotate(39deg) brightness(104%) contrast(91%);
+		@media (max-width:$mobile){
+			width: toRem(17);
+			height: toRem(17);
+		}
 	}
 }
 .result {
