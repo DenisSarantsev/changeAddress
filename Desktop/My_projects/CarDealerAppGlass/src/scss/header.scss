@@ -82,7 +82,10 @@
 }
 
 .desktop-authorization-block {
+	display: flex;
+	align-items: center;
 	flex-wrap: nowrap;
+
 	@media (max-width:$mobile){
 		display: none;
 	}

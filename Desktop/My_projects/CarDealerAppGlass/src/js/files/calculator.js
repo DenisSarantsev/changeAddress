@@ -2,6 +2,7 @@
 // const areaSelect = document.querySelector(".area__list");
 // const areaOptionsArr = document.querySelectorAll(".area__list-item");
 
+if ( document.querySelector(".calculator") ) {
 // ---------------------------------------> Змінні елементів калькулятора
 // ---> Кнопки вибору аукціона
 const copartButton = document.querySelector(".auction-copart-button");
@@ -307,7 +308,7 @@ function calculateFullPrice() {
 	}
 }
 
-
+} else {}
 
 
 
