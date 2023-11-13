@@ -11,12 +11,12 @@
 
 
 .footer {
-	color: #FFFFFF;
-	font-weight: 400;
+	color: #000;
+	font-weight: 600;
 	z-index: 100;
 	width: 100%;
 	padding: toRem(15) toRem(25);
-	background-color: rgba(25, 37, 37, 0.6);
+	background-color: rgba(25, 37, 37, 0);
 	animation: 0.7s ease 0s alternate animating-multiple-properties-footer;
 	@media (max-width:$mobile){
 		padding: toRem(10) toRem(15);
@@ -47,7 +47,7 @@
 			cursor: pointer;
 		}
 		& img {
-			filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+			filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(149deg) brightness(102%) contrast(108%);
 			max-width: toRem(30);
 			@media (max-width:$mobile){
 				max-width: toRem(25);

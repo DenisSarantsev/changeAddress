@@ -12,7 +12,7 @@
 			<main class="page main-container-padding">
 
 				<section class="calculator">
-					<div class="calculator__container card-main-style _gm">
+					<div class="calculator__container card-main-style">
 						<div class="calculator__left-container">
 							<div class="calculator__left-container-top">
 								<h1 class="calculator__title main-title-style">
@@ -23,23 +23,23 @@
 								</div>
 							</div>
 
-								<div class="calculator__calc-wrapper calc">
+								<form action="#" class="calculator__calc-wrapper calc">
 									<div class="calc__auction-area-container">
 										<div class="calc__auction auction">
-											<h2 class="auction__title">
+											<h2 class="auction__title calc-block-title">
 												Аукціон
 											</h2>
 											<div class="auction__buttons-container">
-												<button class="auction__button auction-copart-button main-button-style">
+												<button data-auction="copart" class="selected-auction orange-button-style auction__button auction-copart-button main-button-style calculate-button">
 													COPART
 												</button>
-												<button class="auction__button auction-iaai-button main-button-style">
+												<button data-auction="iaai" class="auction__button auction-iaai-button main-button-style calculate-button">
 													IAAI
 												</button>
 											</div>
 										</div>
 										<div class="calc__area area">
-											<h2 class="area__title">
+											<h2 class="area__title calc-block-title">
 												Майданчик
 											</h2>
 											<select name="" id="" class="area__list main-button-style">
@@ -51,97 +51,97 @@
 										</div>
 									</div>
 									<div class="calc__engine engine">
-										<h2 class="engine__title">
+										<h2 class="engine__title calc-block-title">
 											Двигун
 										</h2>
 										<div class="engine__buttons-container">
-											<button class="engine__button engine-petrol-button main-button-style">
+											<button data-engine="gasoline" class="selected-engine orange-button-style engine__button engine-gasoline-button main-button-style calculate-button">
 												Бензин
 											</button>
-											<button class="engine__button engine-diesel-button main-button-style">
+											<button data-engine="diesel" class="engine__button engine-diesel-button main-button-style calculate-button">
 												Дизель
 											</button>
-											<button class="engine__button engine-hybrid-button main-button-style">
+											<button data-engine="hybrid" class="engine__button engine-hybrid-button main-button-style calculate-button">
 												Гібрид
 											</button>
-											<button class="engine__button engine-electic-button main-button-style">
+											<button data-engine="electro" class="engine__button engine-electic-button main-button-style calculate-button">
 												Електро
 											</button>
 										</div>
 									</div>
 									<div class="calc__body body">
-										<h2 class="body__title">
+										<h2 class="body__title calc-block-title">
 											Кузов
 										</h2>
 										<div class="body__buttons-container">
-											<button class="body__button body-passenger-button main-button-style">
+											<button class="selected-body orange-button-style body__button body-passenger-button main-button-style calculate-button">
 												Легковий
 											</button>
-											<button class="body__button body-suv-button main-button-style">
+											<button class="body__button body-suv-button main-button-style calculate-button">
 												Паркетник
 											</button>
-											<button class="body__button body-off-road-button main-button-style">
+											<button class="body__button body-off-road-button main-button-style calculate-button">
 												Позашляховик
 											</button>
-											<button class="body__button body-moto-button main-button-style">
+											<button class="body__button body-moto-button main-button-style calculate-button">
 												Мото
 											</button>
 										</div>
 									</div>
 									<div class="calc__inputs input">
 										<div class="input__wrapper">
-											<h2 class="input__title">
-												Рік випуску:
+											<h2 class="input__title calc-block-title">
+												*Рік випуску:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field year-input input-main-style required-field">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title calc-block-title">
 												*Вартість лоту:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field lot-price-input input-main-style required-field">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title input-title-engine-volume calc-block-title">
 												*Об'єм двигуна в куб.см:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field volume-input input-main-style required-field">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title calc-block-title">
 												Брокер:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field broker-input input-main-style">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title calc-block-title">
 												Експедиція:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field expedition-input input-main-style">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title calc-block-title">
 												Послуги компанії:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field company-services input-main-style">
 										</div>
 										<div class="input__wrapper">
-											<h2 class="input__title">
+											<h2 class="input__title calc-block-title">
 												Ремонт:
 											</h2>
-											<input type="text" placeholder="Введіть дані" class="input__field input-main-style">
+											<input type="text" placeholder="Введіть дані" class="input__field repair-price-input input-main-style">
 										</div>
 									</div>
-								</div>
+								</form>
 
-							<div class="calc__calc-button calc-button">
+							<!-- <div class="calc__calc-button calc-button">
 								<button class="calc-button__button">
 									<span class="calc-button__button-text">
 										Прорахувати
 									</span>
 									<img src="@img/icons/right-arrow.png" alt="Декоративна стрілка вправо" class="calc-button__arrow">
 								</button>
-							</div>
+							</div> -->
 						</div>
 
 						<div class="calculator__result-wrapper result">
@@ -149,56 +149,56 @@
 								Прорахунок
 							</h2>
 							<div class="result__result-container">
-								<div class="result__line full-price">
-									<span class="result__name">Всього</span><span class="result__price">$32444</span>
-								</div>
 								<div class="result__line lot-price">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Вартість лоту</div><div class="result__price"><span class="result-lot-price"></span><span> $</span></div>
 								</div>
 								<div class="result__line auction-fee">
-									<span class="result__name">Аукц. збір</span><span class="result__price">$32444</span>
+									<div class="result__name">Аукц. збір</div><div class="result__price"><span class="result-auction-price"></span><span> $</span></div>
 								</div>
 								<div class="result__line delivery-price-usa">
-									<span class="result__name">Вартість доставки по США</span><span class="result__price">$32444</span>
+									<div class="result__name">Вартість доставки по США</div><div class="result__price"><span class="result-us-delivery"></span><span> $</span></div>
 								</div>
 								<div class="result__line sea-price">
-									<span class="result__name">Море (New York)</span><span class="result__price">$32444</span>
+									<div class="result__name">Море (New York)</div><div class="result__price"><span class="result-sea"></span><span> $</span></div>
 								</div>
 								<div class="result__line excise-tax">
-									<span class="result__name">Акциз</span><span class="result__price">$32444</span>
+									<div class="result__name">Акциз</div><div class="result__price"><span class="result-excise-tax"></span><span> $</span></div>
 								</div>
 								<div class="result__line customs-tax">
-									<span class="result__name">Мито</span><span class="result__price">$32444</span>
+									<div class="result__name">Мито</div><div class="result__price"><span class="result-customs-duty"></span><span> $</span></div>
+								</div>
+								<div class="result__line customs-tax">
+									<div class="result__name">ПДВ</div><div class="result__price"><span class="result-pdv-duty"></span><span> $</span></div>
 								</div>
 								<div class="result__line customs-tax-full">
-									<span class="result__name">Розмитнення загалом</span><span class="result__price">$32444</span>
+									<div class="result__name">Розмитнення загалом</div><div class="result__price"><span class="result-full-customs-duty"></span><span> $</span></div>
 								</div>
 								<div class="result__line insurance-price">
-									<span class="result__name">Страховка</span><span class="result__price">$32444</span>
-								</div>
-								<div class="result__line button-price">
-									<span class="result__name">Кнопка</span><span class="result__price">$32444</span>
-								</div>
-								<div class="result__line ">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Страховка</div><div class="result__price"><span class="result-insurance"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Брокер</div><div class="result__price"><span class="result-broker"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Експедиція</div><div class="result__price"><span class="result-expedition"></span><span> $</span></div>
+								</div>
+								<div class="result__line company-service-price">
+									<div class="result__name">Послуги компанії</div><div class="result__price"><span class="result-company-service"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Сертифікат</div><div class="result__price"><span class="result-certificate"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Доставка від порту</div><div class="result__price"><span class="result-delivery-from-port"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Постановка на обл.</div><div class="result__price"><span class="result-registration"></span><span> $</span></div>
 								</div>
 								<div class="result__line">
-									<span class="result__name">Вартість лоту</span><span class="result__price">$32444</span>
+									<div class="result__name">Ремонт</div><div class="result__price"><span class="result-repair"></span><span> $</span></div>
+								</div>
+								<div class="result__line full-price">
+									<div class="result__name">Всього</div><div class="result__price"><span class="result-full-price"></span><span> $</span></div>
 								</div>
 							</div>
 							<div class="result__copy-container">

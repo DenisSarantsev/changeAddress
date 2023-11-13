@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231113103708">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+	<div class="wrapper">
+		<img class="wrapper__background" src="img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+		<div class="wrapper__filter-container"></div>
+
+		<header class="header">
+			<div class="header__container">
+				<!-- <img src="img/logo.png" alt="" class="header__logo"> -->
+				<div class="header__logo">LOGO</div>
+
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html">Головна</a></li>
+							<li class="menu__item"><a href="calculator.html">Калькулятор</a></li>
+							<li class="menu__item"><a href="carfax.html">Carfax</a></li>
+							<li class="menu__item"><a href="tracking.html">Tracking</a></li>
+							<li class="menu__item"><a href="faq.html">Часті запитання</a></li>
+						</ul>
+					</nav>
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<div class="header__right-block desktop-authorization-block">
+					<button class="header__registration-button main-button-style">
+						Зареєструватись
+					</button>
+					<button class="header__login-button main-button-style">
+						Увійти
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="page main-container-padding">
+
+			<section class="calculator">
+				<div class="calculator__container card-main-style">
+					<div class="calculator__left-container">
+						<div class="calculator__left-container-top">
+							<h1 class="calculator__title main-title-style">
+								Калькулятор
+							</h1>
+							<div class="calculator__subtitle">
+								Для отримання прорахунку заповніть обов'язкові поля*
+							</div>
+						</div>
+
+						<form action="#" class="calculator__calc-wrapper calc">
+							<div class="calc__auction-area-container">
+								<div class="calc__auction auction">
+									<h2 class="auction__title calc-block-title">
+										Аукціон
+									</h2>
+									<div class="auction__buttons-container">
+										<button data-auction="copart" class="selected-auction orange-button-style auction__button auction-copart-button main-button-style calculate-button">
+											COPART
+										</button>
+										<button data-auction="iaai" class="auction__button auction-iaai-button main-button-style calculate-button">
+											IAAI
+										</button>
+									</div>
+								</div>
+								<div class="calc__area area">
+									<h2 class="area__title calc-block-title">
+										Майданчик
+									</h2>
+									<select name="" id="" class="area__list main-button-style">
+										<option value="" class="area__list-item">Площадка 1</option>
+										<option value="" class="area__list-item">Площадка 2</option>
+										<option value="" class="area__list-item">Площадка 3</option>
+										<option value="" class="area__list-item">Площадка 4</option>
+									</select>
+								</div>
+							</div>
+							<div class="calc__engine engine">
+								<h2 class="engine__title calc-block-title">
+									Двигун
+								</h2>
+								<div class="engine__buttons-container">
+									<button data-engine="gasoline" class="selected-engine orange-button-style engine__button engine-gasoline-button main-button-style calculate-button">
+										Бензин
+									</button>
+									<button data-engine="diesel" class="engine__button engine-diesel-button main-button-style calculate-button">
+										Дизель
+									</button>
+									<button data-engine="hybrid" class="engine__button engine-hybrid-button main-button-style calculate-button">
+										Гібрид
+									</button>
+									<button data-engine="electro" class="engine__button engine-electic-button main-button-style calculate-button">
+										Електро
+									</button>
+								</div>
+							</div>
+							<div class="calc__body body">
+								<h2 class="body__title calc-block-title">
+									Кузов
+								</h2>
+								<div class="body__buttons-container">
+									<button class="selected-body orange-button-style body__button body-passenger-button main-button-style calculate-button">
+										Легковий
+									</button>
+									<button class="body__button body-suv-button main-button-style calculate-button">
+										Паркетник
+									</button>
+									<button class="body__button body-off-road-button main-button-style calculate-button">
+										Позашляховик
+									</button>
+									<button class="body__button body-moto-button main-button-style calculate-button">
+										Мото
+									</button>
+								</div>
+							</div>
+							<div class="calc__inputs input">
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										*Рік випуску:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field year-input input-main-style required-field">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										*Вартість лоту:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field lot-price-input input-main-style required-field">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title input-title-engine-volume calc-block-title">
+										*Об'єм двигуна в куб.см:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field volume-input input-main-style required-field">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										Брокер:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field broker-input input-main-style">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										Експедиція:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field expedition-input input-main-style">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										Послуги компанії:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field company-services input-main-style">
+								</div>
+								<div class="input__wrapper">
+									<h2 class="input__title calc-block-title">
+										Ремонт:
+									</h2>
+									<input type="text" placeholder="Введіть дані" class="input__field repair-price-input input-main-style">
+								</div>
+							</div>
+						</form>
+
+						<!-- <div class="calc__calc-button calc-button">
+								<button class="calc-button__button">
+									<span class="calc-button__button-text">
+										Прорахувати
+									</span>
+									<img src="img/icons/right-arrow.png" alt="Декоративна стрілка вправо" class="calc-button__arrow">
+								</button>
+							</div> -->
+					</div>
+
+					<div class="calculator__result-wrapper result">
+						<h2 class="result__title main-title-style">
+							Прорахунок
+						</h2>
+						<div class="result__result-container">
+							<div class="result__line lot-price">
+								<div class="result__name">Вартість лоту</div>
+								<div class="result__price"><span class="result-lot-price"></span><span> $</span></div>
+							</div>
+							<div class="result__line auction-fee">
+								<div class="result__name">Аукц. збір</div>
+								<div class="result__price"><span class="result-auction-price"></span><span> $</span></div>
+							</div>
+							<div class="result__line delivery-price-usa">
+								<div class="result__name">Вартість доставки по США</div>
+								<div class="result__price"><span class="result-us-delivery"></span><span> $</span></div>
+							</div>
+							<div class="result__line sea-price">
+								<div class="result__name">Море (New York)</div>
+								<div class="result__price"><span class="result-sea"></span><span> $</span></div>
+							</div>
+							<div class="result__line excise-tax">
+								<div class="result__name">Акциз</div>
+								<div class="result__price"><span class="result-excise-tax"></span><span> $</span></div>
+							</div>
+							<div class="result__line customs-tax">
+								<div class="result__name">Мито</div>
+								<div class="result__price"><span class="result-customs-duty"></span><span> $</span></div>
+							</div>
+							<div class="result__line customs-tax">
+								<div class="result__name">ПДВ</div>
+								<div class="result__price"><span class="result-pdv-duty"></span><span> $</span></div>
+							</div>
+							<div class="result__line customs-tax-full">
+								<div class="result__name">Розмитнення загалом</div>
+								<div class="result__price"><span class="result-full-customs-duty"></span><span> $</span></div>
+							</div>
+							<div class="result__line insurance-price">
+								<div class="result__name">Страховка</div>
+								<div class="result__price"><span class="result-insurance"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Брокер</div>
+								<div class="result__price"><span class="result-broker"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Експедиція</div>
+								<div class="result__price"><span class="result-expedition"></span><span> $</span></div>
+							</div>
+							<div class="result__line company-service-price">
+								<div class="result__name">Послуги компанії</div>
+								<div class="result__price"><span class="result-company-service"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Сертифікат</div>
+								<div class="result__price"><span class="result-certificate"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Доставка від порту</div>
+								<div class="result__price"><span class="result-delivery-from-port"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Постановка на обл.</div>
+								<div class="result__price"><span class="result-registration"></span><span> $</span></div>
+							</div>
+							<div class="result__line">
+								<div class="result__name">Ремонт</div>
+								<div class="result__price"><span class="result-repair"></span><span> $</span></div>
+							</div>
+							<div class="result__line full-price">
+								<div class="result__name">Всього</div>
+								<div class="result__price"><span class="result-full-price"></span><span> $</span></div>
+							</div>
+						</div>
+						<div class="result__copy-container">
+							<button class="result__copy-button">
+								<img class="result__copy-icon" src="img/icons/copy-icon.png" alt="Іконка копіювання тексту">
+								<span class="result__copy-button-text">Скопіювати</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__contacts-block">
+					<div class="footer__socials">
+						<a class="footer__social"><img src="img/icons/fb.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/inst.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/whatsapp.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/youtube.png" alt=""></a>
+					</div>
+				</div>
+				<div class="footer__right-block">
+					<div class="footer__phones">
+						<a href="tel:+380930000000" class="footer__phone">+380930000000</a>
+					</div>
+					<div class="footer__adress-block">
+						м. Київ, вул. Велика Васильківська, 63
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20231113103708"></script>
+</body>
+
+</html>
