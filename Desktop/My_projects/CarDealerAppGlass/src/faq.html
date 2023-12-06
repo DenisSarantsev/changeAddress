@@ -7,16 +7,27 @@
 		<div class="wrapper">
 			<img class="wrapper__background" src="@img/view-car-running-high-speed-conv-final.webp" alt="background image car">
 			<div class="wrapper__filter-container"></div>
-
 			@@include('html/_header.htm',{})
 			<main class="page main-container-padding">
-
-				<section class="calculator">
-					<div class="calculator__container card-main-style _gm">
-						
+<!-- Початок контенту -->
+				<section class="faq">
+					<div class="faq__container card-main-style">
+						<h1 class="faq__title main-title-style">
+							Питання та відповіді
+						</h1>
+						<div class="faq-content">
+<!-- Начало вопроса -->
+							<div class="faq-question">
+								<input type="checkbox" class="panel">
+								<img class="plus" src="@img/icons/cross-icon.png" alt="cross">
+								<label class="panel-title">Текст запитання</label>
+								<div class="panel-content">Відповідь</div>
+							</div>
+<!-- Конец вопроса -->
+						</div>
 					</div>
 				</section>
-
+<!-- Кінець контенту -->
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

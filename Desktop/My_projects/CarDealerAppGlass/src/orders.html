@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			<img class="wrapper__background" src="@img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+			<div class="wrapper__filter-container"></div>
+
+			@@include('html/_header.htm',{})
+			<main class="page main-container-padding">
+				<section class="orders">
+					<div class="orders__container">
+							<h2 class="orders__title main-title-style">
+								Відслідковування маршруту контейнера
+							</h2>
+							<div class="orders__body-desktop">
+								<!-- {% if orders %} -->
+								<div class="orders__table">
+									<div class="orders__table-head-row">
+										<div>🚘&nbsp;&nbsp; Автомобіль</div>
+										<div>📅&nbsp;&nbsp; Дата замовлення</div>
+										<div>⏰&nbsp;&nbsp; Дата прибуття</div>
+										<div>🔖&nbsp;&nbsp; VIN-код</div>
+										<div>🕓&nbsp;&nbsp; Статус</div>
+										<div>🚢&nbsp;&nbsp; Номер контейнера</div>
+										<div>🔗&nbsp;&nbsp; tracking url</div>
+									</div>
+									<div class="orders__table-body">
+									<!-- {% for k, v in orders.items() %} -->
+										<div class="orders__table-body-row">
+											<div>
+												<!-- {{ v['model'] }} -->
+												Ford Mustang Boss 302
+											</div>
+											<div>
+												<!-- {{ v['order_date'] }} -->
+												27.10.2023
+											</div>
+											<div>
+												<!-- {{ v['arrive_date'] }} -->
+												18.02.2024
+											</div>
+											<div>
+												<!-- {{ k }} -->
+												12345678901234567
+											</div>
+											<div>
+												<!-- {{ v['status'] }} -->
+												В дорозі
+											</div>
+											<div>
+												<!-- {{ v['container_number'] }} -->
+												78234GDFBCSDKSKJFH8EWBQR
+											</div>
+											<!-- {% if v["tracking_url"]=="" %}
+											<td> - </td>
+											{% else %} -->
+											<div><a href='{{ v["tracking_url"] }}' target='_blank'>
+												https://www.searates.com/ua/container/tracking/?container=235235623463426
+											</a></div>
+											<!-- {% endif %} -->
+										</div>
+									<!-- {% endfor %} -->
+								</div>
+								</div>
+								<!-- {% else %} -->
+								<h5 class="orders__no-orders-message">У вас немає активних замовлень 🤷‍♂️</h5>
+								<!-- {% endif %} -->
+							</div>
+
+							<div class="orders__body-mobile">
+								<!-- {% if orders %} -->
+								<div class="orders__table-mobile">
+									<div class="orders__table-body-mobile">
+									<!-- {% for k, v in orders.items() %} -->
+										<div class="orders__table-body-row-mobile">
+											<div>
+												<div>Автомобіль</div>
+												<div>
+													<!-- {{ v['model'] }} -->
+													Ford Mustang Boss 302
+												</div>
+											</div>
+											<div>
+												<div>Дата замовлення</div>
+												<div>
+													<!-- {{ v['order_date'] }} -->
+													27.10.2023
+												</div>
+											</div>
+											<div>
+												<div>Дата прибуття</div>
+												<div>
+													<!-- {{ v['arrive_date'] }} -->
+													18.02.2024
+												</div>
+											</div>
+											<div>
+												<div>VIN-код</div>
+												<div>
+													<!-- {{ k }} -->
+													12345678901234567
+												</div>
+											</div>
+											<div>
+												<div>Статус</div>
+												<div>
+													<!-- {{ v['status'] }} -->
+													В дорозі
+												</div>
+											</div>
+											<div>
+												<div>Номер контейнера</div>
+												<div>
+													<!-- {{ v['container_number'] }} -->
+													78234GDFBCSDKSKJFH8EWBQR
+												</div>
+											</div>
+											<div>
+												<div>tracking url</div>
+												<div>
+													<!-- {% if v["tracking_url"]=="" %}
+													<td> - </td>
+													{% else %} -->
+													<a href='{{ v["tracking_url"] }}' target='_blank'>
+														https://www.searates.com/ua/container/tracking/?container=235235623463426
+													</a>
+													<!-- {% endif %} -->
+												</div>
+											</div>
+										<!-- {% endfor %} -->
+										</div>
+
+										<div class="orders__table-body-row-mobile">
+											<div>
+												<div>Автомобіль</div>
+												<div>
+													<!-- {{ v['model'] }} -->
+													Ford Mustang Boss 302
+												</div>
+											</div>
+											<div>
+												<div>Дата замовлення</div>
+												<div>
+													<!-- {{ v['order_date'] }} -->
+													27.10.2023
+												</div>
+											</div>
+											<div>
+												<div>Дата прибуття</div>
+												<div>
+													<!-- {{ v['arrive_date'] }} -->
+													18.02.2024
+												</div>
+											</div>
+											<div>
+												<div>VIN-код</div>
+												<div>
+													<!-- {{ k }} -->
+													12345678901234567
+												</div>
+											</div>
+											<div>
+												<div>Статус</div>
+												<div>
+													<!-- {{ v['status'] }} -->
+													В дорозі
+												</div>
+											</div>
+											<div>
+												<div>Номер контейнера</div>
+												<div>
+													<!-- {{ v['container_number'] }} -->
+													78234GDFBCSDKSKJFH8EWBQR
+												</div>
+											</div>
+											<div>
+												<div>tracking url</div>
+												<div>
+													<!-- {% if v["tracking_url"]=="" %}
+													<td> - </td>
+													{% else %} -->
+													<a href='{{ v["tracking_url"] }}' target='_blank'>
+														https://www.searates.com/ua/container/tracking/?container=235235623463426
+													</a>
+													<!-- {% endif %} -->
+												</div>
+											</div>
+										<!-- {% endfor %} -->
+										</div>
+								</div>
+								<!-- {% else %} -->
+								<h5 class="orders__no-orders-message">У вас немає активних замовлень 🤷‍♂️</h5>
+								<!-- {% endif %} -->
+							</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

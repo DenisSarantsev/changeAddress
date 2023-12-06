@@ -213,7 +213,7 @@ h6 {
 
 .main-title-style {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .input-main-style {
@@ -232,6 +232,13 @@ h6 {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+._copy-hidden {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @-webkit-keyframes animating-multiple-properties-header {
@@ -283,10 +290,27 @@ h6 {
           align-items: center;
 }
 
+.header__container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  background-color: rgba(33, 33, 33, 0.95);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu-open .header__container::before {
+  left: 0;
+}
+
 .header__logo {
   max-width: 12.5rem;
   font-size: 3.125rem;
   font-weight: 200;
+  z-index: 100;
 }
 
 .header__menu {
@@ -317,20 +341,90 @@ h6 {
   background: rgba(130, 130, 130, 0.5);
 }
 
-.menu__list {
+.header__login-button-mobile {
+  display: none;
+}
+
+.header__login-button-mobile-name {
+  font-weight: 700;
+  color: orange;
+}
+
+.menu-open .menu {
+  overflow: auto;
+  width: 100vw;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+}
+
+.menu__list {
+  -webkit-transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-column-gap: 1.25rem;
      -moz-column-gap: 1.25rem;
           column-gap: 1.25rem;
-  row-gap: 0.4375rem;
+  row-gap: 0rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 0.625rem;
+}
+
+.menu-open .menu__list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+  font-size: 1.5625rem;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .menu__item:hover {
   text-decoration: underline;
+}
+
+.menu-open .menu {
+  position: absolute;
+  top: 3.125rem;
+}
+
+.mobile-authorization-block {
+  margin-bottom: 6.25rem;
 }
 
 .desktop-authorization-block {
@@ -345,6 +439,7 @@ h6 {
 }
 
 .icon-menu {
+  min-width: 27px;
   display: none;
 }
 
@@ -381,6 +476,14 @@ h6 {
   background-color: rgba(25, 37, 37, 0);
   -webkit-animation: 0.7s ease 0s alternate animating-multiple-properties-footer;
           animation: 0.7s ease 0s alternate animating-multiple-properties-footer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu-open .footer {
+  z-index: -1;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .footer__container {
@@ -424,16 +527,29 @@ h6 {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__social {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.625rem;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .footer__social:hover {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .footer__social img {
   -webkit-filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(151deg) brightness(101%) contrast(102%);
           filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(151deg) brightness(101%) contrast(102%);
-  max-width: 1.875rem;
+  max-width: 1.4375rem;
 }
 
 .footer__phones {
@@ -466,6 +582,10 @@ h6 {
 .footer__adress-block:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+body {
+  overflow: auto;
 }
 
 @-webkit-keyframes animating-multiple-properties1 {
@@ -575,16 +695,17 @@ h6 {
 .wrapper {
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .wrapper__background {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
   z-index: -2;
+  top: 0;
 }
 
 .wrapper__filter-container {
@@ -594,7 +715,7 @@ h6 {
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgb(255, 255, 255);
   background: -webkit-gradient(linear, left bottom, left top, color-stop(39%, rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) 39%, rgba(0, 0, 0, 0.8) 100%);
@@ -837,6 +958,14 @@ h6 {
   grid-row-gap: 10px;
 }
 
+.auction-copart-button {
+  min-width: 6.744125rem;
+}
+
+.auction-iaai-button {
+  min-width: 6.744125rem;
+}
+
 .area {
   width: 100%;
   display: -webkit-box;
@@ -848,16 +977,118 @@ h6 {
           flex-direction: column;
   gap: 0.25rem;
   font-size: 0.9375rem;
+  position: relative;
+}
+
+.area__search {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+  background-color: rgb(38, 37, 32);
+  border-radius: 15px;
+}
+
+.area__search:focus {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: rgb(38, 37, 32);
+}
+
+.area__list-container {
+  width: 100%;
+  overflow-y: scroll;
 }
 
 .area__list {
+  overflow-y: scroll;
+  width: 100%;
   color: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3125rem;
 }
 
 .area__list:focus {
   background: rgba(39, 60, 60, 0.7);
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.area__list-item {
+  width: 100%;
+  text-align: left;
+  padding: 0rem 0.625rem;
+  border-radius: 0.3125rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.area__list-item:hover {
+  cursor: pointer;
+  color: orange;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.search-list-item {
+  height: 2.0625rem;
+  background-color: transparent;
+  outline: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.5625rem 0.9375rem;
+  border-radius: 1.25rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+}
+
+.search-list-item:hover {
+  cursor: text;
+}
+
+.search-list-item:focus {
+  background-color: rgb(38, 37, 32);
+}
+
+.list-open {
+  width: 100%;
+  height: 40vh;
+  position: absolute;
+  overflow-y: scroll;
+  padding: 0.625rem 0.3125rem;
+}
+
+.list-close {
+  position: absolute;
+  height: 0rem;
+  padding: 0rem 0.3125rem;
+}
+
+.dark-bg-list {
+  background-color: rgb(38, 37, 32);
+}
+
+.dark-bg-list:hover {
+  background-color: rgb(38, 37, 32);
 }
 
 .engine {
@@ -1032,6 +1263,20 @@ h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.result__copy-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
 .result__copy-button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1043,14 +1288,14 @@ h6 {
           align-items: center;
   border-radius: 0.4375rem;
   background-color: rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 
 .result__copy-button:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background: rgba(9, 24, 24, 0.7);
+  background-color: rgba(9, 24, 24, 0.7);
 }
 
 .result__copy-icon {
@@ -1062,6 +1307,12 @@ h6 {
 
 .result__copy-button-text {
   font-size: 0.875rem;
+}
+
+.result__additional-payments {
+  font-size: 0.875rem;
+  line-height: 120%;
+  text-align: right;
 }
 
 .orange-button-style {
@@ -1109,7 +1360,808 @@ h6 {
 }
 
 .calc-block-title {
+  margin-left: 0.375rem;
+  font-size: 0.875rem;
+}
+
+._hidden {
+  display: none;
+}
+
+._height-animation {
+  height: 50px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.hybrid-message {
+  height: 0px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+}
+
+.hybrid-message__message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 0.9375rem;
+  padding: 1.25rem 1.25rem;
+  position: absolute;
+  border-radius: 10px;
+  line-height: 120%;
+  z-index: 200;
+  -webkit-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.77);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.77);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hybrid-message__accept {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  padding: 0.3125rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 0.9375rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-weight: 500;
+}
+
+.hybrid-message__accept:hover {
+  background-color: orange;
+  color: #000;
+}
+
+.login {
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.login__container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 1.875rem;
+}
+
+.login__title {
+  margin-bottom: 0.625rem;
+}
+
+.login__form {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 70px 50px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+  height: 100%;
+}
+
+.login__phone-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__phone-container input {
+  border-radius: 0.9375rem;
+  color: #ffffff;
+  padding: 0.3125rem 0.9375rem 0.3125rem 0.625rem;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+}
+
+.login__phone-container input:focus {
+  border: 1px solid orange;
+  box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -webkit-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -moz-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+}
+
+.login__password-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__password-container input {
+  border-radius: 0.9375rem;
+  color: #ffffff;
+  padding: 0.3125rem 0.9375rem 0.3125rem 0.625rem;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15) inset;
+}
+
+.login__password-container input:focus {
+  border: 1px solid orange;
+  box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -webkit-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -moz-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+}
+
+.login__error-message {
+  color: red;
+}
+
+.login__submit-button {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login__submit-button:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: orange;
+  color: #000000;
+  cursor: pointer;
+}
+
+.login__submit-button:hover > * {
+  color: #000000;
+}
+
+.login__submit-button input {
+  font-weight: 600;
+  padding: 0.3125rem 0.9375rem;
+  border-radius: 1.25rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: #FFFFFF;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.login__lost-password a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.login__lost-password a:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: orange;
+}
+
+.login__registration-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.875rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__registration-container a {
+  padding: 0.625rem 1.25rem;
+  background: rgba(130, 130, 130, 0.5);
+  border-radius: 15px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.login__registration-container a:hover {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: orange;
+  cursor: pointer;
+}
+
+.carfax {
+  height: 100%;
+}
+
+.carfax__container {
+  overflow: auto;
+  padding: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  gap: 1.875rem;
+}
+
+.carfax__container > * {
+  width: 50%;
+}
+
+.carfax__form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 1.875rem;
+}
+
+.carfax__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  width: 100%;
+  gap: 0.9375rem;
+}
+
+.carfax__validation-message {
+  color: red;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.carfax__form-submit {
+  padding: 0.625rem 2.5rem;
+  color: #FFFFFF;
+}
+
+.carfax__form-submit:hover {
+  background-color: orange;
+  color: #000;
+  cursor: pointer;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.9375rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(0, 0, 0, 0.4);
+  outline: none;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-control:focus {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid orange;
+  box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -webkit-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+  -moz-box-shadow: 0px 0px 5px 4px rgba(255, 183, 0, 0.3) inset;
+}
+
+.carfaxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 1.875rem;
+}
+
+.carfaxes__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  gap: 0.25rem;
+  overflow-y: scroll;
+  border: 10px solid rgba(0, 0, 0, 0);
+}
+
+.carfaxes__item {
+  padding: 0.3125rem 0.625rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carfaxes__item:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: orange;
+  text-decoration: underline;
+}
+
+.tracking {
+  height: 100%;
+}
+
+.tracking__container {
+  padding: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  gap: 1.875rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tracking__form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.875rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 70px 50px;
+  border-radius: 20px;
+}
+
+.tracking__form-title {
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 120%;
+}
+
+.tracking__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tracking__form:nth-child(2) {
+  max-width: 100%;
+  width: 100%;
+}
+
+.tracking__form-submit {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.9375rem 1.875rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  max-width: 21.875rem;
+}
+
+.tracking__form-submit:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: orange;
+  color: #000000;
+  cursor: pointer;
+}
+
+.tracking__form-submit:hover > * {
+  color: #000000;
+}
+
+.orders {
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.orders__container {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.875rem;
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.orders__title {
+  text-align: center;
+}
+
+.orders__table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.625rem;
+}
+
+.orders__table-head-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (13.8%)[7];
+  grid-template-columns: repeat(7, 13.8%);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+  font-size: 1rem;
+  border-radius: 0.3125rem;
+  background-color: rgba(33, 19, 7, 0.6);
+  font-weight: 700;
+}
+
+.orders__table-head-row > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 120%;
+  padding: 0.625rem;
+}
+
+.orders__table-head-row > *:not(:last-child) {
+  border-right: 1px solid rgba(99, 99, 99, 0.5);
+}
+
+.orders__table-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3125rem;
+}
+
+.orders__table-body-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (13.8%)[7];
+  grid-template-columns: repeat(7, 13.8%);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.3125rem;
+}
+
+.orders__table-body-row > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  line-height: 120%;
+  padding: 0.625rem;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.orders__table-body-row > *:not(:last-child) {
+  border-right: 1px solid rgba(99, 99, 99, 0.5);
+}
+
+.orders__no-orders-message {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.9375rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.4375rem;
+}
+
+.orders__table-body-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.625rem;
+}
+
+.orders__table-body-row-mobile {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 0.625rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  border-radius: 0.4375rem;
+}
+
+.orders__table-body-row-mobile > *:nth-child(7) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: 2/3/3/5;
+}
+
+.orders__table-body-row-mobile > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0.3125rem;
+  font-size: 15px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.orders__table-body-row-mobile > * > *:first-child {
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.3125rem;
+}
+
+.orders__table-body-row-mobile > * > *:last-child {
+  word-break: break-all;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+
+._hidden {
+  display: none;
+}
+
+.faq {
+  height: 100%;
+}
+
+.faq__container {
+  height: 100%;
+  padding: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 1.875rem;
+}
+
+body {
+  color: #333;
+  background: #fcfcfc;
+  overflow-x: hidden;
+}
+
+.faq-header {
+  font-size: 42px;
+  border-bottom: 1px dotted #ccc;
+  padding: 24px;
+}
+
+.faq-content {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px solid #FFFFFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel-title {
+  color: #FFFFFF;
+  font-size: 24px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  display: block;
+  cursor: pointer;
   margin-left: 0.9375rem;
+  margin-top: -1.5rem;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.panel-title:hover {
+  color: orange;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.panel-content {
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 0px 14px;
+  margin: 0 40px;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  margin-left: 3.125rem;
+}
+
+.panel:checked ~ .panel-content {
+  height: auto;
+  opacity: 1;
+  padding: 14px;
+}
+
+.plus {
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(106%) contrast(101%);
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(106%) contrast(101%);
+  max-width: 1.875rem;
+  max-height: 1.875rem;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: -20px;
+  z-index: 5;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
 }
 
 @media (min-width: 47.99875em) {
@@ -1118,9 +2170,40 @@ h6 {
   }
 }
 
+@media (min-width: 62.5625em) {
+  .orders__body-mobile {
+    display: none;
+  }
+}
+
 @media (min-width: 90em) {
   .main-title-style {
     font-size: 2.1875rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .calculator__left-container {
+    padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+  }
+
+  .carfaxes__list {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .carfaxes__item {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+
+  .orders__table-head-row {
+    font-size: 0.875rem;
+  }
+
+  .orders__table-body-row {
+    font-size: 0.875rem;
   }
 }
 
@@ -1153,9 +2236,29 @@ h6 {
   }
 }
 
+@media (max-width: 48em) {
+  .orders__table-body-row-mobile {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .orders__table-body-row-mobile > *:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 3/1/4/4;
+  }
+}
+
 @media (max-width: 68.75em) {
   .main-title-style {
     font-size: 1.875rem;
+  }
+
+  .calc-block-title {
+    font-size: 0.75rem;
   }
 }
 
@@ -1170,6 +2273,27 @@ h6 {
 
   .card__title {
     font-size: 4vw;
+  }
+
+  .carfax__container {
+    padding: 1.25rem;
+    gap: 0.625rem;
+  }
+
+  .tracking__container {
+    padding: 1.25rem;
+  }
+
+  .orders__container {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .orders__body-desktop {
+    display: none;
+  }
+
+  .orders__table-body-row-mobile > * {
+    gap: 0.3125rem;
   }
 }
 
@@ -1194,6 +2318,10 @@ h6 {
         -ms-flex-align: center;
             align-items: center;
   }
+
+  .area__list {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 56.25em) {
@@ -1209,9 +2337,18 @@ h6 {
         -ms-flex-align: end;
             align-items: end;
   }
+
+  .orders__container {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 47.99875em) {
+  .card-main-style {
+    border-radius: 0.9375rem;
+  }
+
   .main-container-padding {
     padding: 0.625rem;
   }
@@ -1220,8 +2357,54 @@ h6 {
     font-size: 1.5625rem;
   }
 
+  .header__logo {
+    max-width: 9.375rem;
+  }
+
+  .header__login-button-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.625rem;
+    font-size: 1.375rem;
+  }
+
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.9375rem;
+    font-size: 1.5625rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
   .menu {
-    display: none;
+    position: absolute;
+    left: -150%;
+    top: 6.25rem;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu-open .menu {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    left: 0;
   }
 
   .desktop-authorization-block {
@@ -1283,8 +2466,16 @@ h6 {
     padding: 0.625rem 0.9375rem;
   }
 
+  .footer__socials {
+    gap: 0.3125rem;
+  }
+
+  .footer__social {
+    padding: 0.5rem;
+  }
+
   .footer__social img {
-    max-width: 1.5625rem;
+    max-width: 1.25rem;
   }
 
   .footer__phones {
@@ -1378,6 +2569,157 @@ h6 {
   .result {
     padding: 1.25rem;
   }
+
+  .login__container {
+    padding: 0;
+  }
+
+  .login__form {
+    width: 100%;
+    padding: 30px 20px;
+    height: 100%;
+    gap: 1.5625rem;
+  }
+
+  .login__phone-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.625rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .login__phone-container input {
+    width: 100%;
+  }
+
+  .login__password-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.625rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .login__password-container input {
+    width: 100%;
+  }
+
+  .login__registration-container {
+    margin-top: 0.625rem;
+    gap: 0.625rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+
+  .login__registration-container a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: rgba(130, 130, 130, 0.7);
+  }
+
+  .carfax__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.875rem;
+  }
+
+  .carfax__container > * {
+    width: 100%;
+  }
+
+  .carfax__form-container {
+    gap: 0.9375rem;
+  }
+
+  .carfaxes {
+    gap: 0.9375rem;
+  }
+
+  .carfaxes__list {
+    padding: 0.3125rem;
+  }
+
+  .tracking__container {
+    padding: 0;
+  }
+
+  .tracking__form-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+  }
+
+  .tracking__form {
+    gap: 0.9375rem;
+  }
+
+  .orders__container {
+    padding: 0.625rem;
+    gap: 0.625rem;
+  }
+
+  .orders__table-head-row {
+    font-size: 0.75rem;
+    grid-column-gap: 2px;
+  }
+
+  .orders__table-head-row > * {
+    padding: 0.3125rem 0.25rem;
+  }
+
+  .orders__table-body-row {
+    font-size: 0.75rem;
+    grid-column-gap: 2px;
+  }
+
+  .orders__table-body-row > * {
+    padding: 0.3125rem 0.25rem;
+  }
+
+  .faq__container {
+    padding: 1.5625rem 0.9375rem;
+  }
+
+  .faq-question {
+    padding: 0.625rem 0;
+  }
+
+  .panel-title {
+    font-size: 1.25rem;
+    margin-left: 0rem;
+  }
+
+  .panel-content {
+    margin: 0;
+    margin-left: 0;
+    font-size: 1rem;
+  }
+
+  .panel:checked ~ .panel-content {
+    padding: 0.625rem 0.875rem 0.25rem 0.875rem;
+  }
+
+  .plus {
+    max-width: 1.5625rem;
+    margin-left: 0rem;
+  }
 }
 
 @media (max-width: 47.99875em) and (any-hover: none) {
@@ -1405,7 +2747,7 @@ h6 {
 
 @media (max-width: 37.5em) {
   .footer__social img {
-    max-width: 1.25rem;
+    max-width: 1.0625rem;
   }
 
   .card {
@@ -1423,11 +2765,38 @@ h6 {
   .carfax-icon {
     max-width: 3.75rem;
   }
+
+  .result__additional-payments {
+    font-size: 0.75rem;
+  }
+
+  .orders__table-body-row-mobile > * > *:last-child {
+    font-size: 0.875rem;
+  }
 }
 
 @media (max-width: 31.25em) {
   .main-title-style {
     font-size: 1.25rem;
+  }
+
+  .header__logo {
+    max-width: 6.25rem;
+  }
+
+  .menu {
+    position: absolute;
+    left: -300%;
+    top: 4.375rem;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu-open .menu {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    left: 0;
+    top: 3.125rem;
   }
 
   .card__mobile-container {
@@ -1464,6 +2833,83 @@ h6 {
 
   .result__result-container {
     font-size: 0.8125rem;
+  }
+
+  .carfax__form-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .carfax__form-submit {
+    width: 100%;
+  }
+
+  .carfaxes {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .carfaxes__list {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .carfaxes__item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .orders__container {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+  }
+
+  .orders__table-head-row {
+    font-size: 0.625rem;
+  }
+
+  .orders__table-body-row {
+    font-size: 0.625rem;
+  }
+
+  .orders__table-body-row-mobile {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .orders__table-body-row-mobile > *:nth-child(7) {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 4/1/5/3;
+  }
+
+  .orders__table-body-row-mobile > * {
+    font-size: 0.75rem;
+  }
+
+  .panel-title {
+    font-size: 1.125rem;
+    margin-top: -1.6875rem;
+    margin-left: -1.125rem;
+  }
+
+  .panel-content {
+    font-size: 0.875rem;
+  }
+
+  .panel:checked ~ .panel-content {
+    padding: 0.5rem 0.4375rem 0.1875rem 0.4375rem;
+  }
+
+  .plus {
+    max-width: 1.25rem;
   }
 }
 

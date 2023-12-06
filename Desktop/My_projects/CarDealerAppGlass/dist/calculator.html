@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231113133921">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231206191850">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="noindex, nofollow">
 </head>
 
@@ -19,6 +19,7 @@
 		<div class="wrapper__filter-container"></div>
 
 		<header class="header">
+
 			<div class="header__container">
 
 				<a class="header__logo">
@@ -33,8 +34,16 @@
 							<li class="menu__item"><a href="carfax.html">Carfax</a></li>
 							<li class="menu__item"><a href="tracking.html">Tracking</a></li>
 							<li class="menu__item"><a href="faq.html">Часті запитання</a></li>
+							<div class="header__login-button-mobile">
+								<a class="main-button-style" href="{{ url_for('logout') }}">Вийти</a>
+								<div class="header__login-button-mobile-name">Денис</div>
+							</div>
+							<br>
+							<br>
+							<br>
 						</ul>
 					</nav>
+
 				</div>
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<div class="header__right-block desktop-authorization-block">
@@ -47,6 +56,10 @@
 				</div>
 			</div>
 		</header>
+
+
+
+
 		<main class="page main-container-padding">
 
 			<section class="calculator">
@@ -61,7 +74,7 @@
 							</div>
 						</div>
 
-						<form action="#" class="calculator__calc-wrapper calc">
+						<div class="calculator__calc-wrapper calc">
 							<div class="calc__auction-area-container">
 								<div class="calc__auction auction">
 									<h2 class="auction__title calc-block-title">
@@ -80,12 +93,11 @@
 									<h2 class="area__title calc-block-title">
 										Майданчик
 									</h2>
-									<select name="" id="" class="area__list main-button-style">
-										<option value="" class="area__list-item">Площадка 1</option>
-										<option value="" class="area__list-item">Площадка 2</option>
-										<option value="" class="area__list-item">Площадка 3</option>
-										<option value="" class="area__list-item">Площадка 4</option>
-									</select>
+									<div class="area__list-container">
+										<p><input type="search" placeholder="Майданчик не обрано" class="area__list-item search-list-item"></p>
+										<div class="area__list main-button-style list-close">
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="calc__engine engine">
@@ -99,12 +111,21 @@
 									<button data-engine="diesel" class="engine__button engine-diesel-button main-button-style calculate-button">
 										Дизель
 									</button>
-									<button data-engine="hybrid" class="engine__button engine-hybrid-button main-button-style calculate-button">
+									<button data-engine="hybrid" class="engine__button engine-hybrid-button main-button-style calculate-button ">
 										Гібрид
 									</button>
 									<button data-engine="electro" class="engine__button engine-electic-button main-button-style calculate-button">
 										Електро
 									</button>
+								</div>
+								<div class="engine__hybrid-message hybrid-message _hidden">
+									<div class="hybrid-message__message">
+										*Згідно законодавства України, гібридом вважається транспортний засіб, який приводиться в рух виключно електродвигуном, а ДВС служить лише для підзарядки батареї.
+										<br>
+										<br>
+										Якщо обраний автомобіль не підпадає під ці вимоги, оберіть інший варіант двигуна для отрамання корректних розрахунків.
+										<button class="hybrid-message__accept">Зрозуміло</button>
+									</div>
 								</div>
 							</div>
 							<div class="calc__body body">
@@ -112,16 +133,16 @@
 									Кузов
 								</h2>
 								<div class="body__buttons-container">
-									<button class="selected-body orange-button-style body__button body-passenger-button main-button-style calculate-button">
+									<button value="легковий" class="selected-body orange-button-style body__button body-passenger-button main-button-style calculate-button">
 										Легковий
 									</button>
-									<button class="body__button body-suv-button main-button-style calculate-button">
+									<button value="паркетник" class="body__button body-suv-button main-button-style calculate-button">
 										Паркетник
 									</button>
-									<button class="body__button body-off-road-button main-button-style calculate-button">
+									<button value="позашляховик" class="body__button body-off-road-button main-button-style calculate-button">
 										Позашляховик
 									</button>
-									<button class="body__button body-moto-button main-button-style calculate-button">
+									<button value="мото" class="body__button body-moto-button main-button-style calculate-button">
 										Мото
 									</button>
 								</div>
@@ -141,7 +162,7 @@
 								</div>
 								<div class="input__wrapper">
 									<h2 class="input__title input-title-engine-volume calc-block-title">
-										*Об'єм двигуна в куб.см:
+										*Об'єм двигуна в см3:
 									</h2>
 									<input type="text" placeholder="Введіть дані" class="input__field volume-input input-main-style required-field">
 								</div>
@@ -149,19 +170,19 @@
 									<h2 class="input__title calc-block-title">
 										Брокер:
 									</h2>
-									<input type="text" placeholder="Введіть дані" class="input__field broker-input input-main-style">
+									<input value="150" type="text" placeholder="Введіть дані" class="input__field broker-input input-main-style">
 								</div>
 								<div class="input__wrapper">
 									<h2 class="input__title calc-block-title">
 										Експедиція:
 									</h2>
-									<input type="text" placeholder="Введіть дані" class="input__field expedition-input input-main-style">
+									<input value="440" type="text" placeholder="Введіть дані" class="input__field expedition-input input-main-style">
 								</div>
 								<div class="input__wrapper">
 									<h2 class="input__title calc-block-title">
 										Послуги компанії:
 									</h2>
-									<input type="text" placeholder="Введіть дані" class="input__field company-services input-main-style">
+									<input value="500" type="text" placeholder="Введіть дані" class="input__field company-services input-main-style">
 								</div>
 								<div class="input__wrapper">
 									<h2 class="input__title calc-block-title">
@@ -170,7 +191,7 @@
 									<input type="text" placeholder="Введіть дані" class="input__field repair-price-input input-main-style">
 								</div>
 							</div>
-						</form>
+						</div>
 
 						<!-- <div class="calc__calc-button calc-button">
 								<button class="calc-button__button">
@@ -200,20 +221,20 @@
 								<div class="result__price"><span class="result-us-delivery"></span><span> $</span></div>
 							</div>
 							<div class="result__line sea-price">
-								<div class="result__name">Море (New York)</div>
+								<div class="result__name ">Море <span class="sea-price-port">(Маршрут невідомий)</span></div>
 								<div class="result__price"><span class="result-sea"></span><span> $</span></div>
 							</div>
 							<div class="result__line excise-tax">
 								<div class="result__name">Акциз</div>
-								<div class="result__price"><span class="result-excise-tax"></span><span> $</span></div>
+								<div class=""><span class="result-excise-tax"></span><span> $</span></div>
 							</div>
 							<div class="result__line customs-tax">
 								<div class="result__name">Мито</div>
-								<div class="result__price"><span class="result-customs-duty"></span><span> $</span></div>
+								<div class=""><span class="result-customs-duty"></span><span> $</span></div>
 							</div>
 							<div class="result__line customs-tax">
 								<div class="result__name">ПДВ</div>
-								<div class="result__price"><span class="result-pdv-duty"></span><span> $</span></div>
+								<div class=""><span class="result-pdv-duty"></span><span> $</span></div>
 							</div>
 							<div class="result__line customs-tax-full">
 								<div class="result__name">Розмитнення загалом</div>
@@ -243,17 +264,16 @@
 								<div class="result__name">Доставка від порту</div>
 								<div class="result__price"><span class="result-delivery-from-port"></span><span> $</span></div>
 							</div>
-							<div class="result__line">
-								<div class="result__name">Постановка на обл.</div>
-								<div class="result__price"><span class="result-registration"></span><span> $</span></div>
-							</div>
+							<!-- <div class="result__line">
+									<div class="result__name">Постановка на обл.</div><div class="result__price"><span class="result-registration"></span><span> $</span></div>
+								</div> -->
 							<div class="result__line">
 								<div class="result__name">Ремонт</div>
 								<div class="result__price"><span class="result-repair"></span><span> $</span></div>
 							</div>
 							<div class="result__line full-price">
 								<div class="result__name">Всього</div>
-								<div class="result__price"><span class="result-full-price"></span><span> $</span></div>
+								<div class=""><span class="result-full-price"></span><span> $</span></div>
 							</div>
 						</div>
 						<div class="result__copy-container">
@@ -261,6 +281,9 @@
 								<img class="result__copy-icon" src="img/icons/copy-icon.png" alt="Іконка копіювання тексту">
 								<span class="result__copy-button-text">Скопіювати</span>
 							</button>
+							<div class="result__additional-payments">
+								*Можливі додаткові платежі
+							</div>
 						</div>
 					</div>
 				</div>
@@ -271,10 +294,11 @@
 			<div class="footer__container">
 				<div class="footer__contacts-block">
 					<div class="footer__socials">
-						<a class="footer__social"><img src="img/icons/fb.png" alt=""></a>
-						<a class="footer__social"><img src="img/icons/inst.png" alt=""></a>
-						<a class="footer__social"><img src="img/icons/whatsapp.png" alt=""></a>
-						<a class="footer__social"><img src="img/icons/youtube.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/instagram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/telegram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/facebook-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/tiktok-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/youtube-icon.png" alt=""></a>
 					</div>
 				</div>
 				<div class="footer__right-block">
@@ -288,7 +312,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231113133921"></script>
+	<script src="js/app.min.js?_v=20231206191850"></script>
 </body>
 
 </html>

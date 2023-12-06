@@ -11,11 +11,99 @@
 			@@include('html/_header.htm',{})
 			<main class="page main-container-padding">
 
-				<section class="calculator">
-					<div class="calculator__container card-main-style _gm">
-						
+				<section class="carfax">
+					<div class="carfax__container card-main-style">
+						<div class="carfax__form-container">
+							<h2 class="carfax__form-title main-title-style">
+								Замовити Carfax 1.5 $
+							</h2>
+							<form class="carfax__form" method="post">
+								<!-- {{ form.hidden_tag() }} -->
+								<!-- {{ form.vin(class="form-control") }} -->
+								<input class="form-control" type="text">
+								<div class="carfax__validation-message _hidden">
+									Номер має бути 17 символів у довжину, та не повинен містити літери
+								</div>
+								<input class="carfax__form-submit main-button-style" type="submit" name="submit" class="btn btn-success" value="Застосувати">
+							</form>
+						</div>
+						<div class="carfax__carfaxes-container carfaxes">
+							<h2 class="carfaxes__title main-title-style">
+								Історія звітів
+							</h2>
+							<ul class="carfaxes__list">
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">16999999999999990</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">78699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">16999999999999990</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">78699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+								<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							</ul>
+						</div>
 					</div>
 				</section>
+
+
+				<!-- <div class="col-md-6">
+					{% if carfaxes != {} %}
+					<br>
+					{% for k, v in carfaxes.items() %}
+					<p><a href="{{v}}" target="_blank"><u>{{k}}</u></a></p>
+					{% endfor %}
+					{% endif %}
+					<br>
+
+					<form method="post">
+							{{ form.hidden_tag() }}
+							<div class="form-group col-md-6">
+									<b>Замовити Carfax {{ priceCarfax }} $</b>
+									<br>
+									<br>
+									{{ form.vin(class="form-control") }}
+									{% if form.vin.errors %}
+									{% for error in form.vin.errors %}
+									<span class="text-danger">{{ error }}</span>
+									{% endfor %}
+									{% endif %}
+							</div>
+							<br>
+							<div class="form-group">
+									<input type="submit" name="submit" class="btn btn-success" value="застосувати 🚀 >>>">
+							</div>
+					</form>
+			</div> -->
 
 			</main>
 			@@include('html/_footer.htm',{})
