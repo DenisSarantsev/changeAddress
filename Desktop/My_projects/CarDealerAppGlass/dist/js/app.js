@@ -5835,14 +5835,14 @@
                 let importTax = 0;
                 if (selectedEngineType === 0 || !customsDutyResult.value && selectedEngineType === "electro") importTax = 0; else if (selectedEngineType === 0 || !customsDutyResult.value && selectedEngineType !== "electro") {
                     let actualAuctionFee = +auctionPriceResult.textContent;
-                    let actualLotInput = +priceLotInput.value;
+                    let actualLotInput = +priceLotInput.value + 1600;
                     let auctionFeeLotPriceSum = actualAuctionFee + actualLotInput;
                     importTax = auctionFeeLotPriceSum / 10;
                 }
                 customsDutyResult.textContent = Math.round(importTax);
-                let MPETax = (+priceLotInput.value + +auctionPriceResult.textContent + +exciseResultDollar + +importTax) / 5;
+                let MPETax = (+priceLotInput.value + 1600 + +auctionPriceResult.textContent + +exciseResultDollar + +importTax) / 5;
                 pdvDutyResult.textContent = Math.round(MPETax);
-                allTaxes = +exciseResultDollar + +importTax + +MPETax + 1600;
+                allTaxes = +exciseResultDollar + +importTax + +MPETax;
                 fullCustomsDutyResult.textContent = Math.round(allTaxes);
             }
             let brokerService = 0;
