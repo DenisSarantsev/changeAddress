@@ -652,8 +652,14 @@ function setEngineVolumeTitle() {
 				currentPort = arrayLand[i][currentAuction]["place"]["port"];
 			}
 		}
-		if ( selectedEngineType === "electro" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE" ) {
+		if ( selectedEngineType === "electro" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE" || 
+				 selectedEngineType === "hybrid" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE"	) {
 			insuranceDangerousCargoResult.textContent = 100;
+		} else if ( selectedEngineType === "electro" && currentPort === "HOUSTON" || 
+								selectedEngineType === "electro" && currentPort === "SEATTLE" ||
+								selectedEngineType === "hybrid" && currentPort === "HOUSTON" ||
+								selectedEngineType === "hybrid" && currentPort === "SEATTLE" ) {
+			insuranceDangerousCargoResult.textContent = 250;
 		} else {
 			insuranceDangerousCargoResult.textContent = 0;
 		}

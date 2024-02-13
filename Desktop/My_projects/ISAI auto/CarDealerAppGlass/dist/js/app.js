@@ -6068,7 +6068,7 @@
                     let firstKey = Object.keys(arrayLand[i])[0];
                     if (firstKey === currentAuction && areaListPlaceSelect === arrayLand[i][currentAuction]["place"]["title"]) currentPort = arrayLand[i][currentAuction]["place"]["port"];
                 }
-                if (selectedEngineType === "electro" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE") insuranceDangerousCargoResult.textContent = 100; else insuranceDangerousCargoResult.textContent = 0;
+                if (selectedEngineType === "electro" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE" || selectedEngineType === "hybrid" && currentPort !== "HOUSTON" && currentPort !== "SEATTLE") insuranceDangerousCargoResult.textContent = 100; else if (selectedEngineType === "electro" && currentPort === "HOUSTON" || selectedEngineType === "electro" && currentPort === "SEATTLE" || selectedEngineType === "hybrid" && currentPort === "HOUSTON" || selectedEngineType === "hybrid" && currentPort === "SEATTLE") insuranceDangerousCargoResult.textContent = 250; else insuranceDangerousCargoResult.textContent = 0;
             }
             function calculateCertificatePrice() {
                 certificateResult.textContent = certificate;
