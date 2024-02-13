@@ -1,0 +1,108 @@
+//====================================================================================================
+
+@keyframes animating-multiple-properties-footer {
+  from {
+    transform: translate(0, 50vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+.footer {
+	color: #FFFFFF;
+	font-weight: 600;
+	z-index: 100;
+	width: 100%;
+	padding: toRem(15) toRem(25);
+	background-color: rgba(25, 37, 37, 0);
+	animation: 0.7s ease 0s alternate animating-multiple-properties-footer;
+	transition: all 0.3s ease 0s;
+	.menu-open & {
+		z-index: -1;
+		transition: all 0.3s ease 0s;
+	 }
+	@media (max-width:$mobile){
+		padding: toRem(10) toRem(15);
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(10);
+	}
+	&__contacts-block {
+		display: flex;
+	}
+	&__right-block {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: toRem(10);
+	}
+	&__socials {
+		display: flex;
+		gap: toRem(10);
+		display: flex;
+		flex-wrap: nowrap;
+		flex-wrap: wrap;
+		@media (max-width:$mobile){
+			gap: toRem(5);
+		}
+	}
+	&__social {
+		background-color: rgba($color: #000000, $alpha: 0.2);
+		padding: toRem(10);
+		border-radius: 50%;
+		transition: all 0.3s ease 0s;
+		@media (max-width:$mobile){
+			padding: toRem(8);
+		}
+		&:hover {
+			cursor: pointer;
+			background-color: rgba($color: #000000, $alpha: 0.6);
+			transition: all 0.3s ease 0s;
+		}
+		& img {
+			filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(151deg) brightness(101%) contrast(102%);
+			// filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(149deg) brightness(102%) contrast(108%);
+			max-width: toRem(23);
+			@media (max-width:$mobile){
+				max-width: toRem(20);
+			}
+			@media (max-width: em(600)){
+				max-width: toRem(17);
+			}
+		}
+	}
+	&__phones {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		justify-content: center;
+		gap: toRem(6);
+		font-size: toRem(17);
+		@media (max-width:$mobile){
+			font-size: toRem(16);
+		}
+	}
+	&__phone {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__adress-block {
+		text-align: right;
+		line-height: 120%;
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		@media (max-width:$mobile){
+			font-size: toRem(14);
+		}
+	}
+}
+
+//====================================================================================================

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240213180326">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+	<div class="wrapper">
+		<img class="wrapper__background" src="img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+		<div class="wrapper__filter-container"></div>
+
+		<header class="header">
+
+			<div class="header__container">
+
+				<a class="header__logo">
+					<img src="img/logo.svg" alt="" class="header__logo">
+				</a>
+
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html">Головна</a></li>
+							<li class="menu__item"><a href="calculator.html">Калькулятор</a></li>
+							<li class="menu__item"><a href="carfax.html">Carfax</a></li>
+							<li class="menu__item"><a href="tracking.html">Tracking</a></li>
+							<li class="menu__item"><a href="faq.html">Часті запитання</a></li>
+							<div class="header__login-button-mobile">
+								<a class="main-button-style" href="{{ url_for('logout') }}">Вийти</a>
+								<div class="header__login-button-mobile-name">Денис</div>
+							</div>
+							<br>
+							<br>
+							<br>
+						</ul>
+					</nav>
+
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<div class="header__right-block desktop-authorization-block">
+					<button class="header__registration-button main-button-style">
+						Зареєструватись
+					</button>
+					<button class="header__login-button main-button-style">
+						Увійти
+					</button>
+				</div>
+			</div>
+		</header>
+
+
+
+
+		<main class="page main-container-padding">
+
+			<section class="carfax">
+				<div class="carfax__container card-main-style">
+					<div class="carfax__form-container">
+						<h2 class="carfax__form-title main-title-style">
+							Замовити Carfax 1.5 $
+						</h2>
+						<form class="carfax__form" method="post">
+							<!-- {{ form.hidden_tag() }} -->
+							<!-- {{ form.vin(class="form-control") }} -->
+							<input class="form-control" type="text">
+							<div class="carfax__validation-message _hidden">
+								Номер має бути 17 символів у довжину, та не повинен містити літери
+							</div>
+							<input class="carfax__form-submit main-button-style" type="submit" name="submit" class="btn btn-success" value="Застосувати">
+						</form>
+					</div>
+					<div class="carfax__carfaxes-container carfaxes">
+						<h2 class="carfaxes__title main-title-style">
+							Історія звітів
+						</h2>
+						<ul class="carfaxes__list">
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">16999999999999990</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">78699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">16999999999999990</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">78699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">88699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">28699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">38699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">48699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">58699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+							<li class="carfaxes__item"><a href="{{v}}" target="_blank">68699999999999999</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- <div class="col-md-6">
+					{% if carfaxes != {} %}
+					<br>
+					{% for k, v in carfaxes.items() %}
+					<p><a href="{{v}}" target="_blank"><u>{{k}}</u></a></p>
+					{% endfor %}
+					{% endif %}
+					<br>
+
+					<form method="post">
+							{{ form.hidden_tag() }}
+							<div class="form-group col-md-6">
+									<b>Замовити Carfax {{ priceCarfax }} $</b>
+									<br>
+									<br>
+									{{ form.vin(class="form-control") }}
+									{% if form.vin.errors %}
+									{% for error in form.vin.errors %}
+									<span class="text-danger">{{ error }}</span>
+									{% endfor %}
+									{% endif %}
+							</div>
+							<br>
+							<div class="form-group">
+									<input type="submit" name="submit" class="btn btn-success" value="застосувати 🚀 >>>">
+							</div>
+					</form>
+			</div> -->
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__contacts-block">
+					<div class="footer__socials">
+						<a class="footer__social"><img src="img/icons/instagram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/telegram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/facebook-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/tiktok-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/youtube-icon.png" alt=""></a>
+					</div>
+				</div>
+				<div class="footer__right-block">
+					<div class="footer__phones">
+						<a href="tel:+380930000000" class="footer__phone">+380930000000</a>
+					</div>
+					<div class="footer__adress-block">
+						м. Київ, вул. Велика Васильківська, 63
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240213180326"></script>
+</body>
+
+</html>

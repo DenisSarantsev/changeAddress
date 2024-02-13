@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ company_info.title }}
+{% endblock %}
+
+{% block body %}
+		<main class="page main-container-padding">
+			<section class="login">
+				<div class="login__container">
+					<form method="post" class="login__form">
+						{{ form.csrf_token }} 
+						<h2 class="login__title main-title-style">Вхід / Реєстрація</h2>
+						<div class="login__phone-container">
+							{{ form.phone.label }}
+							{{ form.phone }}
+							{% if form.phone.errors %}
+							{% for error in form.phone.errors %}
+							<span class="text-danger">{{ error }}</span>
+							{% endfor %}
+							{% endif %}
+						</div>
+<!--						це коли телефон або пароль не дійсний -->
+						<div>
+							{% if messages %}
+							<span class="text-danger" style="color: red;">{{ messages[-1] }}</span>
+							{% endif %}
+						</div>
+						<div class="login__password-container">
+							{{ form.password.label }}
+							{{ form.password }}
+							{% if form.password.errors %}
+							{% for error in form.password.errors %}
+							<span class="text-danger">{{ error }}</span>
+							{% endfor %}
+							{% endif %}
+						</div>
+						<p class="login__error-message _hidden">Недійсний номер телефону</p>
+						<div class="login__submit-button main-button-style">
+							<input type="submit" name="submit" value="Застосувати">
+						</div>
+						<div class="login__lost-password">
+							<a href="{{ bot_link }}?start=777" target="_blank">Замовити новий пароль</a>
+						</div>
+						<div class="login__registration-container">
+							<span>Ще не зареєстровані?</span>
+							<a href="{{ bot_link }}?start=777" target="_blank" class="login__registration-button">
+								Зареєструватись
+							</a>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+{% endblock %}

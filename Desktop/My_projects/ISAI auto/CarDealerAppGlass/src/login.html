@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			<img class="wrapper__background" src="@img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+			<div class="wrapper__filter-container"></div>
+
+			@@include('html/_header.htm',{})
+			<main class="page main-container-padding">
+
+				<section class="login">
+					<div class="login__container">
+						<form class="login__form ">
+							<h2 class="login__title main-title-style">Вхід / Реєстрація</h2>
+							<div class="login__phone-container">
+								<label for="">Phone number:</label>
+								<input type="tel" placeholder="+38(0xx)xxx-xx-xx">
+							</div>
+							<div class="login__password-container">
+								<label for="">Password:</label>
+								<input type="password">
+							</div>
+							<p class="login__error-message _hidden">Недійсний номер телефону</p>
+							<div class="login__submit-button main-button-style">
+								<input type="submit" value="Застосувати" type="text">
+							</div>
+							<div href="#" class="login__lost-password">
+								<a href="">Замовити новий пароль</a>
+							</div>
+							<div class="login__registration-container">
+								<span>Ще не зареєстровані?</span>
+								<a class="login__registration-button">
+									Зареєструватися
+								</a>
+							</div>
+						</form>
+					</div>
+
+
+
+
+
+
+							<!-- <form method="post">
+									{{ form.csrf_token }} 
+									<p>{{ form.phone.label }}: {{ form.phone }}</p>
+									<p></p>
+									<p>{{ form.password.label }}:  {{ form.password }}</p>
+									{% if messages %}
+									<p style="color: red;">{{ messages[-1] }}</p>
+									<br>
+									{% endif %}
+									<p class="lead">{{ form.submit }}</p>
+									<input type="submit" name="submit" class="btn btn-success" value="застосувати >>>">
+									<br>
+									<br>
+									<div class="col-md-12"><a href="{{ bot_link }}?start=777" target="_blank">Замовити новий пароль</a></div>
+							</form> -->
+							<!-- <p class="lead"><a href="{{ bot_link }}?start=777" target="_blank" class="btn btn-danger">зареєструватися >>></a></p> -->
+
+				</section>
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

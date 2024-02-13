@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240213180326">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+	<div class="wrapper">
+		<img class="wrapper__background" src="img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+		<div class="wrapper__filter-container"></div>
+
+		<header class="header">
+
+			<div class="header__container">
+
+				<a class="header__logo">
+					<img src="img/logo.svg" alt="" class="header__logo">
+				</a>
+
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html">Головна</a></li>
+							<li class="menu__item"><a href="calculator.html">Калькулятор</a></li>
+							<li class="menu__item"><a href="carfax.html">Carfax</a></li>
+							<li class="menu__item"><a href="tracking.html">Tracking</a></li>
+							<li class="menu__item"><a href="faq.html">Часті запитання</a></li>
+							<div class="header__login-button-mobile">
+								<a class="main-button-style" href="{{ url_for('logout') }}">Вийти</a>
+								<div class="header__login-button-mobile-name">Денис</div>
+							</div>
+							<br>
+							<br>
+							<br>
+						</ul>
+					</nav>
+
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<div class="header__right-block desktop-authorization-block">
+					<button class="header__registration-button main-button-style">
+						Зареєструватись
+					</button>
+					<button class="header__login-button main-button-style">
+						Увійти
+					</button>
+				</div>
+			</div>
+		</header>
+
+
+
+
+		<main class="page main-container-padding">
+
+			<section class="login">
+				<div class="login__container">
+					<form class="login__form ">
+						<h2 class="login__title main-title-style">Вхід / Реєстрація</h2>
+						<div class="login__phone-container">
+							<label for="">Phone number:</label>
+							<input type="tel" placeholder="+38(0xx)xxx-xx-xx">
+						</div>
+						<div class="login__password-container">
+							<label for="">Password:</label>
+							<input type="password">
+						</div>
+						<p class="login__error-message _hidden">Недійсний номер телефону</p>
+						<div class="login__submit-button main-button-style">
+							<input type="submit" value="Застосувати" type="text">
+						</div>
+						<div href="#" class="login__lost-password">
+							<a href="">Замовити новий пароль</a>
+						</div>
+						<div class="login__registration-container">
+							<span>Ще не зареєстровані?</span>
+							<a class="login__registration-button">
+								Зареєструватися
+							</a>
+						</div>
+					</form>
+				</div>
+
+
+
+
+
+
+				<!-- <form method="post">
+									{{ form.csrf_token }} 
+									<p>{{ form.phone.label }}: {{ form.phone }}</p>
+									<p></p>
+									<p>{{ form.password.label }}:  {{ form.password }}</p>
+									{% if messages %}
+									<p style="color: red;">{{ messages[-1] }}</p>
+									<br>
+									{% endif %}
+									<p class="lead">{{ form.submit }}</p>
+									<input type="submit" name="submit" class="btn btn-success" value="застосувати >>>">
+									<br>
+									<br>
+									<div class="col-md-12"><a href="{{ bot_link }}?start=777" target="_blank">Замовити новий пароль</a></div>
+							</form> -->
+				<!-- <p class="lead"><a href="{{ bot_link }}?start=777" target="_blank" class="btn btn-danger">зареєструватися >>></a></p> -->
+
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__contacts-block">
+					<div class="footer__socials">
+						<a class="footer__social"><img src="img/icons/instagram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/telegram-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/facebook-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/tiktok-icon.png" alt=""></a>
+						<a class="footer__social"><img src="img/icons/youtube-icon.png" alt=""></a>
+					</div>
+				</div>
+				<div class="footer__right-block">
+					<div class="footer__phones">
+						<a href="tel:+380930000000" class="footer__phone">+380930000000</a>
+					</div>
+					<div class="footer__adress-block">
+						м. Київ, вул. Велика Васильківська, 63
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240213180326"></script>
+</body>
+
+</html>

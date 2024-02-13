@@ -1,0 +1,70 @@
+
+.tracking {
+	height: 100%;
+		&__container {
+			padding: toRem(30);
+			display: flex;
+			height: 100%;
+			gap: toRem(30);
+			justify-content: center;
+			align-items: center;
+			@media (max-width: em(1000)){
+				padding: toRem(20);
+			}
+			@media (max-width:$mobile){
+				padding: 0;
+			}
+		}
+		&__form-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: toRem(30);
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			padding: 70px 50px;
+			border-radius: 20px;
+			@media (max-width:$mobile){
+				width: 100%;
+				height: 100%;
+				padding: 30px 15px;
+			}
+		}
+		&__form-title {
+			color: #FFFFFF;
+			text-align: center;
+			line-height: 120%;
+		}
+		&__form {
+			display: flex;
+			flex-direction: column;
+			gap: toRem(20);
+			align-items: center;
+			&:nth-child(2) {
+				max-width: 100%;
+				width: 100%;
+			}
+			@media (max-width:$mobile){
+				gap: toRem(15);
+			}
+		}
+		&__form-submit {
+			background-color: rgba(0,0,0,0.7);
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			padding: toRem(15) toRem(30);
+			font-weight: 600;
+			color: #FFFFFF;
+			max-width: toRem(350);
+		&:hover {
+			transition: all 0.3s ease 0s;
+			background-color: orange;
+			color: #000000;
+			cursor: pointer;
+			&>* {
+				color: #000000;
+			}
+		}
+		}
+}
+

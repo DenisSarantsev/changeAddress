@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<img class="wrapper__background" src="@img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+		<div class="wrapper__filter-container"></div>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page main-container-padding">
+				<section class="main-page">
+					<div class="main-page__container">
+						<a href="calculator.html" class="main-page__card card card-main-style">
+							<img src="@img/cards/calc.png" alt="" class="card__icon">
+							<div class="card__mobile-container">
+								<div class="card__title">
+									Калькулятор
+								</div>
+								<div class="card__description">
+									Розрахунок вартості всіх етапів доставки авто з аукціонів США
+								</div>
+							</div>
+						</a>
+						<a href="carfax.html" class="main-page__card card card-main-style">
+							<img src="@img/cards/carfax.png" alt="" class="card__icon carfax-icon">
+							<div class="card__mobile-container">
+								<div class="card__title">CarFax®</div>
+								<div class="card__description">
+									Звіт по історії автомобіля
+								</div>
+							</div>
+						</a>
+						<a href="tracking.html" class="main-page__card card card-main-style">
+							<img src="@img/cards/tracking.png" alt="" class="card__icon">
+							<div class="card__mobile-container">
+								<div class="card__title">
+									Tracking
+								</div>
+								<div class="card__description">
+									Відслідковування маршруту контейнера
+								</div>
+							</div>
+						</a>
+						<a href="faq.html" class="main-page__card card card-main-style">
+							<img src="@img/cards/faq.png" alt="" class="card__icon">
+							<div class="card__mobile-container">
+								<div class="card__title">
+									F.A.Q.
+								</div>
+								<div class="card__description">
+									Відповіді на часті запитання
+								</div>
+							</div>
+							</a>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

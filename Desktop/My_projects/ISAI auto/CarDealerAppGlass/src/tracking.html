@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			<img class="wrapper__background" src="@img/view-car-running-high-speed-conv-final.webp" alt="background image car">
+			<div class="wrapper__filter-container"></div>
+
+			@@include('html/_header.htm',{})
+			<main class="page main-container-padding">
+				<section class="tracking">
+					<div class="tracking__container">
+
+						<div class="tracking__form-container">
+							<h2 class="tracking__form-title main-title-style">
+								Відслідковування маршруту контейнера
+							</h2>
+							<form class="tracking__form" method="post">
+								<!-- {{ form.hidden_tag() }} -->
+								<!-- {{ form.number(class="form-control", id="containerNumber") }} -->
+
+								<input class="form-control" type="text" id="containerNumber">
+								<input class="tracking__form-submit main-button-style" type="submit" name="submit" class="btn btn-success" value="Застосувати" id="applyButton">
+							</form>
+						</div>
+
+					</div>
+				</section>
+			</main>
+
+			<script>
+				function openLinkInNewWindow() {
+				const userInput = document.getElementById("containerNumber").value;
+				const link = `https://www.searates.com/ua/container/tracking/?container=${userInput}`;
+				// Відкриваємо посилання в новому вікні браузера
+				window.open(link, '_blank');
+				}
+				// Визначаємо обробку події при натисканні кнопки
+				document.getElementById("applyButton").addEventListener("click", openLinkInNewWindow);
+			</script>
+
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
