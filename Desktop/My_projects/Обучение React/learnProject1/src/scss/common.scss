@@ -1,0 +1,13 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+// Головний стиль кнопки
+.default-button {
+	transition: all 0.3s ease 0s;
+	background-color: $mainYellow;
+	padding: toRem(10) toRem(25);
+	border-radius: toRem(5);
+	&:hover {
+		transition: all 0.3s ease 0s;
+		background-color: $activeButton;
+	}
+}

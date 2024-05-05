@@ -1,0 +1,35 @@
+.header {
+	display: flex;
+	gap: toRem(15);
+	justify-content: space-between;
+	padding: 5px 15px;
+	&__logo {
+
+	}
+	&__navigation {
+
+	}
+}
+
+.logo {
+	width: 100%;
+	height: 100%;
+	max-width: 110px;
+	&__image {
+
+	}
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	font-size: toRem(16);
+	font-weight: 500;
+	&__username {
+
+	}
+	&__exit {
+		
+	}
+}
