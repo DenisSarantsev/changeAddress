@@ -1,0 +1,58 @@
+.chat-body {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+
+	::-webkit-scrollbar {
+		display: none; /* Скрываем полосу прокрутки в WebKit-браузерах */
+	}
+
+	&__wrapper {
+		max-width: toRem(800);
+		width: 100%;
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		transform: rotate(180deg);
+	}
+}
+
+// --------------- Контейнери повідомлень і стилі повідомлень
+// Повіомлення користувача
+.user-message-container {
+	padding: toRem(10);
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	&__user-message {
+		transform: rotate(180deg);
+		background-color: yellow;
+		padding: toRem(20);
+		width: 100%;
+		max-width: toRem(500);
+		border-radius: toRem(15);
+		line-height: 140%;
+	}
+}
+
+// Повідомлення AI
+.ai-message-container {
+	padding: toRem(10);
+	width: 100%;
+	transform: rotate(180deg);
+	display: flex;
+	align-items: flex-start;
+	gap: toRem(20);
+	&__avatar-container {
+	}
+	&__avatar-image {
+		max-width: toRem(50);
+	}
+	&__ai-message {
+		max-width: 100%;
+		padding-top: toRem(15);
+		line-height: 140%;
+	}
+}

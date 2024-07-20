@@ -1,0 +1,25 @@
+.chat-header {
+	background-color: #FFFFFF;
+	padding: toRem(10) toRem(30) toRem(10) toRem(20);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__logo-image {
+		max-height: toRem(45);
+		height: 100%;
+		width: auto;
+	}
+	&__user-info {
+		display: flex;
+		align-items: center;
+		gap: toRem(12);
+	}
+	&__user-name {
+		font-size: toRem(17);
+		font-weight: 700;
+	}
+	&__user-icon {
+		max-width: toRem(27);
+		max-height: toRem(27);
+	}
+}

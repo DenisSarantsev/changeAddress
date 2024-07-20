@@ -1,0 +1,38 @@
+.chat-period-block {
+	display: flex;
+	flex-direction: column;
+	gap: toRem(5);
+	&__period-title {
+		font-size: toRem(14);
+		font-weight: 600;
+		padding: toRem(5) toRem(10);
+		margin-top: toRem(20); // Временный стиль. Удалить после вывода контента динамически!!!
+	}
+	&__chats-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(1);
+	}
+	&__chats-list-item {
+		font-size: toRem(15);
+		width: 100%;
+		word-wrap: break-word;
+		white-space: nowrap;
+		overflow: hidden;
+		border-radius: toRem(10);
+		padding: toRem(8) toRem(10);
+		&:hover {
+			cursor: pointer;
+			background: rgba(255,248,181,1);
+		}
+	}
+	&__chats-list-item-text {
+		background: linear-gradient(to right, black 0%, black 85%, transparent 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.active-chat-title {
+	background: rgba(255,248,181,1);
+}

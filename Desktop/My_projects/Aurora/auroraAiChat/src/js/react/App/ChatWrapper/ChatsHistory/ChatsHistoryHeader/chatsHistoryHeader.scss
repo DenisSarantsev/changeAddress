@@ -1,0 +1,12 @@
+.chats-history-header {
+	padding: toRem(10) toRem(15);
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	&__new-chat-button {
+	}
+	&__new-chat-icon {
+		max-width: toRem(25);
+		max-height: toRem(25);
+	}
+}
